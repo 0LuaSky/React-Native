@@ -1,8 +1,6 @@
 import { View, TextInput, Text, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
 import React, { useRef, useEffect } from 'react';
 import {styles} from './style';
-import Movemento from '../../components/move/index';
-import Entrar from '../../components/enter/index';
 import { useNavigation } from '@react-navigation/native';
 
 const Centro = () => {
@@ -12,7 +10,7 @@ const Centro = () => {
   useEffect(() => {
     // Faz a rolagem para o meio quando o componente é montado
     if (scrollViewRef.current) {
-      scrollViewRef.current.scrollTo({ x: 860, animated: false }); // Ajuste `x` para o ponto inicial desejado
+      scrollViewRef.current.scrollTo({ x: 50, animated: false }); // Ajuste `x` para o ponto inicial desejado
     }
   }, []);
 
@@ -45,15 +43,22 @@ const Centro = () => {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} ref={scrollViewRef}>
           <View style={styles.main}>    
 
-            <View style={styles.content}>
-              <ImageBackground source={{uri: 'https://dbdzm869oupei.cloudfront.net/img/sticker/preview/7172.png',}} style={styles.backgroundImage}>
+            <View style={styles.centercontent}>
+              <ImageBackground source={{uri: 'https://i.pinimg.com/originals/9e/5f/7d/9e5f7dd16441259ee6fcb65b1d28ce20.png',}} style={styles.backgroundImage}>
 
-              <Text style={[styles.titulo, {marginTop:130}]}>
-                Jogo da adivinhação
+              <Text style={[styles.titulo, {marginTop: 220, marginBottom:40}]}>
+                nossas atrações:
               </Text>
-              <Text style={[styles.titulo, {marginTop:100}]}>
-                <Text onPress={entrar1}>{'Entrar'}</Text>
+              <Text style={styles.texto}>
+                Descubra o pokemon
               </Text>
+              <Text style={styles.texto}>
+                Show de magica
+              </Text>
+              <Text style={[styles.texto, {marginBottom: 'auto'}]} >
+                poço (quase) sem fundo
+              </Text>
+
               </ImageBackground>
             </View>
 
@@ -66,25 +71,6 @@ const Centro = () => {
               <Text style={[styles.titulo, {marginTop:100}]}>
                 <Text onPress={entrar2}>{'Entrar'}</Text>
               </Text>
-              </ImageBackground>
-            </View>
-
-            <View style={styles.centercontent}>
-              <ImageBackground source={{uri: 'https://i.pinimg.com/originals/9e/5f/7d/9e5f7dd16441259ee6fcb65b1d28ce20.png',}} style={styles.backgroundImage}>
-
-              <Text style={[styles.texto, {marginTop: 250}]}>
-                esquerda -- Jogo da adivinhação
-              </Text>
-              <Text style={styles.texto}>
-                esquerda -- Area da api
-              </Text>
-              <Text style={styles.texto}>
-                Show de magica -- direita
-              </Text>
-              <Text style={[styles.texto, {marginBottom: 'auto'}]} >
-                poço (quase) sem fundo -- direita
-              </Text>
-
               </ImageBackground>
             </View>
 
